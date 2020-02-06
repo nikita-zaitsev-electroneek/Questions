@@ -5,6 +5,7 @@ const Open = (props) => {
     let elem = props.state.filter( answer => answer.id == props.elemState[0])[0];
     let textAnswer = React.createRef();
     let condition = () => {
+        if (textAnswer.current.value == ''){return false}
         props.condition(textAnswer.current.value, props.elemState[0])
     }
     return(
